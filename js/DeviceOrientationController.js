@@ -239,8 +239,8 @@ var DeviceOrientationController = function (object, domElement, preventDefault, 
 		return function () {
 			objQuat.copy(tmpQuat);
 			if (appState === CONTROLLER_STATE.MANUAL_ROTATE) {
-				lat = ( startY - currentY ) * scrollSpeedY;
-				lon = ( startX - currentX ) * scrollSpeedX;
+				lat = ( startY - currentY ) * -scrollSpeedY;
+				lon = ( startX - currentX ) * -scrollSpeedX;
 				phi = THREE.Math.degToRad(lat);
 				theta = THREE.Math.degToRad(lon);
 				rotQuat.set(0, Math.sin(theta / 2), 0, Math.cos(theta / 2));
